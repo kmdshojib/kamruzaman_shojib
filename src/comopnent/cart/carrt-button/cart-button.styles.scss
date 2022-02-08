@@ -1,0 +1,14 @@
+.cart-btn{
+    background: #5ECE7B;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+    cursor: pointer;
+
+    .btn-style{
+        fill: #fff;
+    }
+}
