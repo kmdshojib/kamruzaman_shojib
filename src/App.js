@@ -5,7 +5,9 @@ import {Switch,Route} from 'react-router-dom'
 import Header from './comopnent/header/header.component'
 import ShopPage from './comopnent/shop/shop.component'
 
-import WomensCatagory from './page/women/women.component'
+import Catagory from './page/headerPage/catagory.component'
+
+
 
 function App() {
   return (
@@ -13,8 +15,9 @@ function App() {
         <Header />
       <Switch>
         <Route exact path="/" component={ShopPage }/>
-        <Route path="/women" component={WomensCatagory}/>
-        <Route path="/men" component={WomensCatagory }/>
+        <Route path="/women" component={Catagory}/>
+        <Route path="/men" component={Catagory}/>
+        <Route path="/kids" component={Catagory}/>
       </Switch>
     </div>
   );

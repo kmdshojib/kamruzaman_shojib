@@ -8,8 +8,8 @@ const PreviewCatagory = ({title, items}) => {
     <h1 className='title'>{title}</h1>
     <div className='view'>
       {items
-        .map(({ id, ...otherItemProps }) => (
-          <CollectionItem className="spacing" key={id} {...otherItemProps} />
+        .map(item  => (
+          <CollectionItem className="spacing" key={item.id} item={item}  />
         ))}
     </div>
   </div>

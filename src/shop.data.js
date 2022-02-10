@@ -1,43 +1,7 @@
 const SHOP_DATA = [
+  
   {
-    id: 3,
-    title: 'Jackets',
-    routeName: 'jackets',
-    items: [
-      {
-        id: 18,
-        name: 'Black Jean Shearling',
-        imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
-        price: 125
-      },
-      {
-        id: 19,
-        name: 'Blue Jean Jacket',
-        imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
-        price: 90
-      },
-      {
-        id: 20,
-        name: 'Grey Jean Jacket',
-        imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
-        price: 90
-      },
-      {
-        id: 21,
-        name: 'Brown Shearling',
-        imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
-        price: 165
-      },
-      {
-        id: 22,
-        name: 'Tan Trench',
-        imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
-        price: 185
-      }
-    ]
-  },
-  {
-    id: 4,
+    id: 1,
     title: 'Womens',
     routeName: '/women',
     items: [
@@ -86,7 +50,7 @@ const SHOP_DATA = [
     ]
   },
   {
-    id: 5,
+    id: 2,
     title: 'Mens',
     routeName: '/men',
     items: [
@@ -127,7 +91,45 @@ const SHOP_DATA = [
         price: 25
       }
     ]
-  }
+  },
+
+  {
+    id: 3,
+    title: 'Kids',
+    routeName: '/kids',
+    items: [
+      {
+        id: 18,
+        name: 'Jacket',
+        imageUrl: 'https://images.pexels.com/photos/6349517/pexels-photo-6349517.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260https://i.ibb.co/XzcwL5s/black-shearling.png',
+        price: 125
+      },
+      {
+        id: 19,
+        name: 'Blue Jean Jacket',
+        imageUrl: 'https://images.pexels.com/photos/7979407/pexels-photo-7979407.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        price: 90
+      },
+      {
+        id: 20,
+        name: 'Sweater',
+        imageUrl: 'https://images.pexels.com/photos/3934038/pexels-photo-3934038.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        price: 90
+      },
+      {
+        id: 21,
+        name: 'White Jacket',
+        imageUrl: 'https://images.pexels.com/photos/7573404/pexels-photo-7573404.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+        price: 165
+      },
+      {
+        id: 22,
+        name: 'Cap',
+        imageUrl: 'https://images.pexels.com/photos/749077/pexels-photo-749077.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        price: 185
+      }
+    ]
+  },
 ];
 
 export default SHOP_DATA;

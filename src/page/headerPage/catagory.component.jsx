@@ -7,7 +7,7 @@ import {withRouter} from 'react-router-dom'
  
 
 
-class WomensCatagory extends Component {
+class Catagory extends Component {
     state = { 
         collections: SHOP_DATA
      }
@@ -20,6 +20,7 @@ class WomensCatagory extends Component {
     render() { 
         
         const {collections} = this.state;
+        console.log(collections)
         const {  location } = this.props;
         return (
             <div className='shop-page'>
@@ -35,4 +36,4 @@ class WomensCatagory extends Component {
 
 
  
-export default withRouter(WomensCatagory);
+export default withRouter(Catagory);

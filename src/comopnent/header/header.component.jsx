@@ -1,6 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-import {Link} from 'react-router-dom'
+import {NavLink,Link } from 'react-router-dom'
 //logo
 import logo from '../../assets/logo.png'
 import './styles/header.styles.scss'
@@ -11,13 +12,13 @@ import CartDropdown from '../cart/dropdown/cart-dropdown';
 
 
 
-const Header = () => {
+const Header = ({hidden}) => {
     return ( 
        <div className="header">
            <div className="options">
-               <Link className="option" to='/women'>Women</Link>
-               <Link className="option" to='/men'>Men</Link>
-               <Link className="option" to='/kids'>Kids</Link>
+               <NavLink activeClassName="navbar__link--active" className="option" to='/women'>WOMEN</NavLink>
+               <NavLink activeClassName="navbar__link--active" className="option" to='/men'>MEN</NavLink>
+               <NavLink activeClassName="navbar__link--active" className="option" to='/kids'>KIDS</NavLink>
            </div>
            <Link to="/" className="logo-container">
                 <img src={logo} alt="logo" className="logo"/>
@@ -29,9 +30,15 @@ const Header = () => {
                </div>
                 <CartIcon />
            </div>
-           <CartDropdown />
+          {
+              hidden ? null :  <CartDropdown />
+          }
        </div>
      );
 }
  
-export default Header;
+const mapStateToProps = ({cart: { hidden }}) => ({
+    hidden
+})
+
+export default connect(mapStateToProps)(Header);

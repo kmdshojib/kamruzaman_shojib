@@ -3,7 +3,7 @@ body {
   font-family:Raleway, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 20px 80px;
+  padding: 15px 80px;
 }
 
 ::-webkit-scrollbar {
