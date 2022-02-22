@@ -1,0 +1,24 @@
+.wrappeSlide{
+    display: flex;
+    align-items: center;
+
+    .middleImage {
+        img {
+            width: 141px;
+        }
+    }
+    .chevron {
+        border: 1px solid black;
+        background: black;
+    }
+
+    .chevron:hover {
+        cursor: pointer;
+        background: rgba(58, 58, 58, 0.45);
+    }
+
+    .chevron:hover {
+        border: 1px solid black;
+        background: rgb(0, 0, 0);
+    }
+}

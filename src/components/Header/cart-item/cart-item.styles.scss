@@ -1,0 +1,130 @@
+.cartItem {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    align-content: center;
+    align-items: baseline  ;  
+    margin-left: 5px;
+    margin-bottom: 5px;    
+    .cartItemText {
+        .cartLink {
+            .cart-text {
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 25.6px;
+
+                a {
+                    margin: 0;
+                }
+            }
+
+            .currency {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 25.6px;
+            }
+        }
+    }
+
+    .cartLink:hover {
+        cursor: pointer;
+        a {
+            h5, h4 {
+                color: #5ECE7B;
+            }
+        }
+    }
+
+    .itemQtyAndImage {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .qtyButtons {
+            text-align: center;
+            button {
+                background: white;
+                border: black 1px solid;
+                padding: 5px;
+            }
+
+            button:hover {
+                cursor: pointer;
+                background: black;
+                color: white;
+            }
+        }
+
+        .cartItemImageWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            img {
+                width: 100px !important;
+            }
+        }
+    }
+
+    .attributesBlock {
+        display: grid;
+        grid-template-columns: 30% 30%;
+        grid-gap: 12px;
+        padding: 0.5rem 0;
+        
+        button {
+            background: white;
+            border: black 1px solid;
+            padding: 1.5px;
+            font-family: Source Sans Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 160%;
+            text-align: center;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background: black;
+            color: white;
+        }
+
+        button.attributeActive {
+            opacity: 0.25;
+        }
+
+        button.attributeActiveColor {
+            opacity: 0.25;
+        }
+
+        .miscAttribute {
+            grid-column-start: span 3;
+            p {
+                font-size: 10px;
+                line-height: 10px;
+            }
+
+            .miscAttributeButton {
+                display: flex;
+                padding: 0.25rem 0;
+                gap: 8px;
+            }
+        }
+    }
+}
+
+.cartTotal {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+}
+
+
+
+.cartShow {
+opacity: 1;
+visibility: visible;
+top: 65px;
+}

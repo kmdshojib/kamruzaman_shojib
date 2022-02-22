@@ -1,0 +1,95 @@
+.cart-header{
+    font-size: 20px;
+    font-weight:600;
+}
+
+.itemsInCart{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    border-top: 1px rgba(229, 229, 229, 1) solid;
+
+    .barnd,.name,.cartItemPrice{
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 27px;
+        padding-bottom: 16px;
+    }
+    .name,.cartItemPrice{
+        padding-bottom: 12px;
+    }
+}
+.quantityImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .quantityButtons ,.sliderAndButton{
+        padding-right: 15px;
+        text-align: center;
+
+        .btn,.remove{
+            background: white;
+            border: 1px solid black !important;
+            color: color;
+            padding: 10px;
+            border: none;
+
+            &:hover{
+                cursor: pointer;
+                background: black;
+                padding: 0.5rem 0.5rem;
+                border: none;
+                color: white;
+                border: 1px solid black;
+            }
+        }
+
+    }
+    .sliderAndButton{
+        padding-right: 0px;
+    }
+}
+
+.attributesBlockSquares {
+    display: grid;
+    grid-template-columns: 13% 13%;
+    grid-gap: 12px;
+    padding: 0.5rem 0;
+
+    .miscAttributeButton {
+        display: flex;
+        padding: 0.25rem 0;
+        gap: 8px;
+    }
+    
+    button {
+        background: white;
+        border: black 1px solid;
+        padding: 0.45rem 0.25rem;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background: black;
+        color: white;
+    }
+
+    button.attributeActive {
+        background: black;
+        color: white;
+    }
+
+    button.attributeActiveColor {
+        opacity: 0.25;
+    }
+
+    
+}

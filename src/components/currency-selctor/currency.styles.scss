@@ -1,0 +1,32 @@
+.currencySelector{
+    display: flex;
+    cursor: pointer;
+    svg{
+        margin: 10px 0 0 10px;
+    }
+}
+.currency-dropdown{
+    position: absolute;
+    background:#FFFFFF;
+    display: flex;
+    top: 70px;
+    flex-direction: column;
+    width: 60px;
+    cursor: pointer;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.250),
+            -1px -1px 7px rgba(0, 0, 0, 0.250);
+    display: none;
+    .symbol{
+        margin-left:5px;
+        margin-bottom: 5px;
+        font-weight: 400;
+        cursor: pointer;
+        
+        .label{
+            margin-left:2px
+        }
+    }
+}
+.show{
+    display: flex;
+}

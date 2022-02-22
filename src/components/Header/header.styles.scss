@@ -1,0 +1,40 @@
+.header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    .logo{
+      padding-top: 15px;
+      height:28.62px;
+    }
+     
+    .cart-currency{
+      padding-top: 15px;
+      display: flex;
+      flex-direction: row;
+      
+      .currency,.cart{
+        margin-right: 20px;
+      }
+      }
+
+    .options {
+      width: 200px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+     
+  
+      .option {
+        padding-right: 15px;
+      }
+    }
+    
+    .navbar__link--active {
+      color:#5ECE7B;
+      transition: color .1s ease-in-out;
+    }
+  }
