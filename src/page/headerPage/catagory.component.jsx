@@ -20,12 +20,11 @@ class Catagory extends Component {
     render() { 
         
         const {collections} = this.state;
-        console.log(collections)
         const {  location } = this.props;
         return (
             <div className='shop-page'>
             {collections.filter(item => item.routeName === location.pathname)
-            .map(({ id, ...otherCollectionProps }) => (
+            .map(({ id, ...otherCollectionProps }) =>(
               <PreviewCatagory key={id} {...otherCollectionProps} />
             ))}
           

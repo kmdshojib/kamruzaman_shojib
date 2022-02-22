@@ -33,10 +33,13 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+     
 
         .currency{
           display: flex;
           justify-content:space-between;
+          margin-right: 5px;
+          cursor: pointer;
           .amount{
             font-size:12.5px;
             margin-right: 5px;

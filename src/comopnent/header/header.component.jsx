@@ -10,6 +10,8 @@ import {ReactComponent as Arrow} from '../../assets/toparrow.svg'
 import CartIcon from '../cart/Icon/cart-icon'
 import CartDropdown from '../cart/dropdown/cart-dropdown';
 
+import CurrencyDropdown from '../currency/currency-dropdown.component';
+
 
 
 const Header = ({hidden}) => {
@@ -25,9 +27,15 @@ const Header = ({hidden}) => {
            </Link>
            <div className="cart-currency">
                <div className="currency">
-                   <span className="amount">$</span>
-                   <Arrow className="arrow" />
+                   <div className="item">
+                        <span className="amount">$</span>
+                        <Arrow className="arrow" />
+                   </div>
+                   <div className="dropdown-menu">
+                        <CurrencyDropdown />
+                   </div>
                </div>
+              
                 <CartIcon />
            </div>
           {

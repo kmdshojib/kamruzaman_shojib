@@ -5,7 +5,7 @@ import './preview.catagory.scss'
 const PreviewCatagory = ({title, items}) => {
     return ( 
         <div className='collection-preview'>
-    <h1 className='title'>{title}</h1>
+      <h1 className='title'>{title}</h1>
     <div className='view'>
       {items
         .map(item  => (
