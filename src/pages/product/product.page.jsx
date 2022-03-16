@@ -22,7 +22,7 @@ export default class ProductPage extends Component {
 
     render() {
         const { id } = this.props.match.params;
-        
+        const {currencyIndex,getCurrencySymbol,returnAttributes} =this.props
         return (
             <Query query={ GET_EACH_PRODUCT } variables={ { id } }>
                 {/*Here we will pass the data into the components as props if we have large jsx*/}
@@ -74,7 +74,7 @@ export default class ProductPage extends Component {
                                                         <h5 className="robotoText">{attributes.name.toUpperCase()}:</h5>
                                                         <div className="attributesBlockSquares">
                                                             {
-                                                                this.props.getAttributes(data.product.id, attributes.items, attributes.name)
+                                                                returnAttributes(data.product.id, attributes.items, attributes.name)
                                                             }
                                                         </div>
                                                     </div>
@@ -86,8 +86,8 @@ export default class ProductPage extends Component {
                                         <div className="productTextBlock">
                                             <h5 className="robotoText">PRICE:</h5>
                                             <h5>
-                                                {this.props.getCurrencySymbol(data.product.prices[this.props.currencyIndex].currency.label)} 
-                                                {data.product.prices[this.props.currencyIndex].amount}
+                                                {getCurrencySymbol(data.product.prices[this.props.currencyIndex].currency.label)} 
+                                                {data.product.prices[currencyIndex].amount}
                                             </h5>
                                         </div>
                                         

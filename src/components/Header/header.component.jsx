@@ -47,6 +47,7 @@ class Header extends Component {
                     currencyClick={this.state.currencyClick}
                     cartClick={this.state.cartClick}
                     handleCurrency={this.handleCurrency}
+                    currencyIndex={this.props.currencyIndex}
                     getCurrencySymbol={this.props.getCurrencySymbol}
                     selectCurrency={this.props.selectCurrency}
                     overlayChange={this.props.overlayChange}

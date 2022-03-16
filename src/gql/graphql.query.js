@@ -24,7 +24,7 @@ export const GET_ALL_PRODUCTS = gql`
             prices {
               currency{
                 label
-                  symbol
+                symbol
               }
               amount
             }
@@ -40,6 +40,7 @@ export const GET_CLOTHES = gql`
           products{
             id
             name
+            inStock
             gallery
             attributes {
               id
@@ -115,6 +116,7 @@ export const GET_GADGETS= gql`
       products{
         id
         name
+        inStock
         gallery
         attributes {
           id

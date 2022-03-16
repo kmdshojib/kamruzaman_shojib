@@ -41,7 +41,7 @@ class ProductCard extends Component {
                                     <div className="name">{brand} {name}</div>
                                     <div className="price">
                                         {getCurrencySymbol(prices[currencyIndex].currency.label)} 
-                                        {prices[currencyIndex].amount}
+                                        {prices[currencyIndex].amount} 
                                     </div>
                                 </div>
                             </Link>

@@ -2,48 +2,50 @@ import React, { Component } from 'react';
 
 import {Query} from '@apollo/react-components'
 
-import {GET_CURRENCY} from '../../gql/graphql.query'
+import {GET_CURRENCY,} from '../../gql/graphql.query'
 
 import {ReactComponent as Arrow} from '../../assets/toparrow.svg'
 import './currency.styles.scss'
 import Spinner from '../../spinner/spinner.comopnent';
 
 class Currency extends Component {
+  
     render() { 
+        const {currencyIndex,handleCurrency,overlayChange,currencyClick,selectCurrency,getCurrencySymbol} = this.props
         return (
             <Query query={ GET_CURRENCY }>
             {
                 ({loading, error, data}) => {
-                    console.log(data)
                     if (loading) return <Spinner/>;
                     if (error) return <p>Err</p>;
 
                     return (
                         <div>
-                            <div 
+                            <div  
                                 className="currencySelector" 
                                 onClick={() => { 
-                                    this.props.handleCurrency(!this.props.currencyClick)
-                                    this.props.overlayChange(false)
+                                    handleCurrency(!currencyClick)
+                                    overlayChange(false)
                                     }
                                 }
                             > 
-                                <div>$</div>
+                                 <span className="symbol">{data.currencies[currencyIndex].symbol}</span> 
                                 <Arrow className="arrow" />
                             </div>
 
                             {/* geeting symbol the end point using same function */}
-                            <div  className={this.props.currencyClick ?"currency-dropdown show" : "currency-dropdown"} >
+                            <div  className={currencyClick ?"currency-dropdown show" : "currency-dropdown"} >
                                 {
                                     data.currencies.map(({label,symbol}) => (
                                      
-                                        <span class="symbol"
+                                        <span className="symbol" key={label}
                                         onClick={() => {
                                          
-                                            this.props.handleCurrency(false)
-                                            this.props.selectCurrency(label)
+                                            handleCurrency(false)
+                                            selectCurrency(label)
                                         }}
-                                        >{this.props.getCurrencySymbol(symbol)} {symbol}<span class="label">{label}</span></span>
+                                        >{getCurrencySymbol(symbol)} {symbol}<span className="label">{label}</span>
+                                        </span>
                                     ))
                                 }
                             </div>
