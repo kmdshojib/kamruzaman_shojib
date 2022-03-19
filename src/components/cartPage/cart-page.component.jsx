@@ -5,17 +5,18 @@ import './cart-page.styles.scss'
 export default class ShoppingCart extends Component {
  
     render() {
+        const{getCurrencySymbol,currencyIndex,shoppingCart,returnAttributes,INCREMENT_CART,DECREMENT_CART,REMOVE_FROM_CART} = this.props;
         return (
             <div className="cartPage">
                 <span className="cart-header">CART</span>
                
 
                 {    
-                    this.props.shoppingCart.length > 0
+                    shoppingCart.length > 0
                    
                     ?
-                    this.props.shoppingCart.map((item) => (
-                        <div className="itemsInCart">
+                    shoppingCart.map((item) => (
+                        <div className="itemsInCart" key={item.id}>
                             <div>
                                 <div className="cartPageText">
                                     <span className="barnd">{item.brand}</span>
@@ -24,9 +25,8 @@ export default class ShoppingCart extends Component {
 
                                 <div className="cartItemPrice">
                                     <h5>
-                                        {console.log(item.prices[this.props.currencyIndex].currency)}
-                                        {this.props.getCurrencySymbol(item.prices[this.props.currencyIndex].currency.label)} 
-                                        {item.prices[this.props.currencyIndex].amount}
+                                        {getCurrencySymbol(item.prices[currencyIndex].currency.label)} 
+                                        {item.prices[currencyIndex].amount}
                                     </h5>
                                 </div>
                                 
@@ -38,7 +38,7 @@ export default class ShoppingCart extends Component {
                                                     <h5 className="robotoText">{attributes.name.toUpperCase()}:</h5>
                                                     <div className="attributesBlockSquares">
                                                         {
-                                                            this.props.returnAttributes(item.id, attributes.items, attributes.name)
+                                                            returnAttributes(item.id, attributes.items, attributes.name)
                                                         }
                                                     </div>
                                                 </div>
@@ -51,15 +51,15 @@ export default class ShoppingCart extends Component {
                             <div>
                                 <div className="quantityImage">
                                     <div className="quantityButtons">
-                                        <button className="btn" onClick={() => this.props.INCREMENT_CART(item)}>+</button>
+                                        <button className="btn" onClick={() => INCREMENT_CART(item)}>+</button>
                                         <h6>{item.qty}</h6>
-                                        <button className="btn" onClick={() => this.props.DECREMENT_CART(item)}>-</button>
+                                        <button className="btn" onClick={() => DECREMENT_CART(item)}>-</button>
                                     </div>
 
                                     <div className="sliderAndButton">
                                         <SlideImage images={item.gallery}/>
                                         <button className="remove"
-                                            onClick={() => this.props.REMOVE_FROM_CART(item)}
+                                            onClick={() => REMOVE_FROM_CART(item)}
                                         >Remove From Cart</button>
                                     </div>
                                 </div>

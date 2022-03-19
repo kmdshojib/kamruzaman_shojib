@@ -12,12 +12,15 @@
 
     &:hover{
         box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+
+        .add-button{
+          display: flex;
+          transition: .1s ease-in-out;
+        }
     }
     .add-button{
-      top: 208px;
-      left: 189px;
-      position: absolute;
-      
+      display: flex;
+      display: none;
     }
 
     .image {
@@ -31,6 +34,10 @@
         height: 75%;
       }
         
+    }
+    .price-cart{
+      display: flex;
+      justify-content: space-between;
     }
     .collection-footer {
         width: 100%;

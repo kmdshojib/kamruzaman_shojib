@@ -22,7 +22,8 @@ export default class ProductPage extends Component {
 
     render() {
         const { id } = this.props.match.params;
-        const {currencyIndex,getCurrencySymbol,returnAttributes} =this.props
+        const {currencyIndex,getCurrencySymbol,returnAttributes,ADD_TO_CART} =this.props
+        const {imageIndex} = this.state
         return (
             <Query query={ GET_EACH_PRODUCT } variables={ { id } }>
                 {/*Here we will pass the data into the components as props if we have large jsx*/}
@@ -53,7 +54,7 @@ export default class ProductPage extends Component {
 
                                 <div className="bigImage">
                                     <img
-                                        src={data.product.gallery[this.state.imageIndex]} 
+                                        src={data.product.gallery[imageIndex]} 
                                         alt={data.product.name}
                                     />
                                 </div>
@@ -86,7 +87,7 @@ export default class ProductPage extends Component {
                                         <div className="productTextBlock">
                                             <h5 className="robotoText">PRICE:</h5>
                                             <h5>
-                                                {getCurrencySymbol(data.product.prices[this.props.currencyIndex].currency.label)} 
+                                                {getCurrencySymbol(data.product.prices[currencyIndex].currency.label)} 
                                                 {data.product.prices[currencyIndex].amount}
                                             </h5>
                                         </div>
@@ -97,7 +98,7 @@ export default class ProductPage extends Component {
                                                 ? (
                                                 <button
                                                     className="addToCart"
-                                                    onClick={() => this.props.ADD_TO_CART(data.product)}
+                                                    onClick={() => ADD_TO_CART(data.product)}
                                                 >ADD TO CART</button>
                                                 )
                                                 : (

@@ -10,6 +10,21 @@ import Spinner from '../../spinner/spinner.comopnent';
 
 class Currency extends Component {
   
+
+    currencyRef = React.createRef()
+
+    handleCurrencyOutside = (event) => {
+        if (this.props.currencyClick){
+            if(!this.currencyRef.current.contains(event.target) ){
+                 this.props.handleCurrency(false) }
+        } 
+        
+    }
+    
+    componentDidMount() {
+        document.addEventListener("mousedown",this.handleCurrencyOutside)
+    }
+
     render() { 
         const {currencyIndex,handleCurrency,overlayChange,currencyClick,selectCurrency,getCurrencySymbol} = this.props
         return (
@@ -20,7 +35,7 @@ class Currency extends Component {
                     if (error) return <p>Err</p>;
 
                     return (
-                        <div>
+                        <div ref={this.currencyRef}>
                             <div  
                                 className="currencySelector" 
                                 onClick={() => { 
@@ -40,7 +55,6 @@ class Currency extends Component {
                                      
                                         <span className="symbol" key={label}
                                         onClick={() => {
-                                         
                                             handleCurrency(false)
                                             selectCurrency(label)
                                         }}

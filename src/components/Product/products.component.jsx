@@ -15,16 +15,7 @@ class ProductCard extends Component {
             <div>
                 <div className={inStock? "product-collection": "outOfStock product-collection"}>
                     <div>
-                        <img className="image" src={imgUrl} alt={name} />
-                        <div className="add-button">
-                            {
-                            inStock
-                            ? (
-                                <span onClick={overlay? (null): (() =>ADD_TO_CART(product))}>
-                                  <CartButton />
-                                </span>): ("")} 
-                            </div>
-
+                    <Link to={ `/product/${id}`}><img className="image" src={imgUrl} alt={name} /> </Link>
                             {overlay? (
                                 <div className="collection-footer">
                                     {inStock? (""): (<div className="stockText">OUT OF STOCK</div>)}
@@ -35,16 +26,26 @@ class ProductCard extends Component {
                                         </div>
                                 </div>
                                 ):(
+                            <div className="price-cart">
                                 <Link to={ `/product/${id}`}>
-                                <div className="collection-footer">
-                                {inStock? (""): (<div className="stockText">OUT OF STOCK</div>)}
-                                    <div className="name">{brand} {name}</div>
-                                    <div className="price">
-                                        {getCurrencySymbol(prices[currencyIndex].currency.label)} 
-                                        {prices[currencyIndex].amount} 
+                                    <div className="collection-footer">
+                                    {inStock? (""): (<div className="stockText">OUT OF STOCK</div>)}
+                                        <div className="name">{brand} {name}</div>
+                                        <div className="price">
+                                            {getCurrencySymbol(prices[currencyIndex].currency.label)} 
+                                            {prices[currencyIndex].amount} 
+                                        </div>
                                     </div>
+                                </Link>
+                                <div className="add-button">
+                                {
+                                inStock
+                                ? (
+                                    <span onClick={overlay? (null): (() =>ADD_TO_CART(product))}>
+                                    <CartButton />
+                                    </span>): ("")} 
                                 </div>
-                            </Link>
+                            </div>
                             )}
                     </div>
                 </div>

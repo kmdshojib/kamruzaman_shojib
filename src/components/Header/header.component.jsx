@@ -27,6 +27,8 @@ class Header extends Component {
         });
     }
 
+ 
+
     render() { 
     const {category,switchCategory} =this.props
     return (
@@ -55,8 +57,8 @@ class Header extends Component {
                 />
         </div>
             
-         <div className="cart">
-            <CartDropDown 
+         <div className="cart" >
+            <CartDropDown
                     cartClick={this.state.cartClick}
                     currencyClick={this.state.currencyClick}
                     handleCart={this.handleCart}

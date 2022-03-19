@@ -8,6 +8,12 @@ import CartItem from '../cart-item/cart-item.component.';
 import './cart-dropdown.styles.scss'
 
 class CartDropDown extends Component {
+
+    state = {
+        currencyClick: false,
+        cartClick: false,
+    }
+
     cartTotal = (cart, currencyIndex) => {
         let total = 0;
         let currencySymbol = "$";
@@ -34,8 +40,20 @@ class CartDropDown extends Component {
         return total;
     }
 
+    cartRef = React.createRef()
+    handleCurrencyOutside = (event) => {
+        if (this.props.cartClick){
+            if(!this.cartRef.current.contains(event.target) ){
+                this.props.handleCart(false) }
+        } 
+    }
+    componentDidMount() {
+        document.addEventListener("mousedown", this.handleCurrencyOutside)
+    }
+    componentWillUnmount(){
+        document.removeEventListener("mousedown", this.handleCurrencyOutside)
+    }
 
-    
     render() {
         const{handleCart,
             overlayChange,
@@ -47,7 +65,7 @@ class CartDropDown extends Component {
             REMOVE_FROM_CART,
             overlay,returnAttributes,cartClick} =this.props
         return (
-            <div>
+            <div ref={this.cartRef}>
                 <div 
                     className="shoppingCart " 
                     onClick={() =>  {

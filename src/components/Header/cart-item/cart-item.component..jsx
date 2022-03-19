@@ -22,7 +22,6 @@ class CartItem extends Component {
                                 
                             >
                             {this.props.product.brand} {this.props.product.name}
-                            {console.log(this.props.overlay)}
                             </Link>
                         </div>
                     </div>
