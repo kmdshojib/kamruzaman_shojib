@@ -21,9 +21,7 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
-      <App 
-        onClick={ console.log("cliked")}
-      />
+      <App/>
     </BrowserRouter>
   </ApolloProvider>,
   document.getElementById('root')

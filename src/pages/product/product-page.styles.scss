@@ -104,7 +104,39 @@
 
         .attributesBlock {
             width: 35%;
-        }
+        } 
+        .attributesBlockSquares {
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-gap: 12px;
+            padding: 0.5rem 0;
+            
+            button {
+                background: white;
+                border: black 1px solid;
+                padding: 0.45rem 0.25rem;
+                font-size: 14px;
+                font-weight: 400;
+                text-align: center;
+            }
 
+            button:hover {
+                cursor: pointer;
+                background: black;
+                color: white;
+            }
+
+            button.attributeActive {
+                background: black;
+                color: white;
+            }
+
+            button.attributeActiveColor {
+                opacity: 0.25;
+            }
+
+            
+        }
     }
+
 }

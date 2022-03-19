@@ -308,7 +308,7 @@ selectCurrency = (currency) => {
 
 //this bit of code will save files to localstroage 
 
-  componentWillMount(){
+UNSAFE_componentWillMount(){
     localStorage.getItem('shoppingCart') && this.setState({
         shoppingCart: JSON.parse(localStorage.getItem('shoppingCart'))
     });
@@ -323,7 +323,7 @@ selectCurrency = (currency) => {
 }
 
 
-  componentWillUpdate(nextProps, nextState) {
+UNSAFE_componentWillUpdate(nextProps, nextState) {
     localStorage.setItem('shoppingCart', JSON.stringify(nextState.shoppingCart));
     localStorage.setItem('attributes', JSON.stringify(nextState.attributes));
     localStorage.setItem('currencyIndex', JSON.stringify(nextState.currencyIndex));
