@@ -25,6 +25,10 @@ class Currency extends Component {
         document.addEventListener("mousedown",this.handleCurrencyOutside)
     }
 
+    componentWillUnmount() {
+        document.removeEventListener("mousedown",this.handleCurrencyOutside)
+    }
+
     render() { 
         const {currencyIndex,handleCurrency,overlayChange,currencyClick,selectCurrency,getCurrencySymbol} = this.props
         return (
