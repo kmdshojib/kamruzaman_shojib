@@ -67,6 +67,8 @@ ADD_TO_CART = (product) => {
       });
   }
 
+  
+
 }
 
 REMOVE_FROM_CART = (product) => {
@@ -169,9 +171,9 @@ addAttribute = (productName, attributesArray, attributeType, activeIndex) => {
 }
 
 returnAttributes = (productName, items, attributeType) => {
+
   if (attributeType === "Size") {
       let result = this.state.attributes.find((product) => product.productName === productName && product.attributeType === attributeType);
-
       return items.map((attr, index) => (
           <button
               onClick={
@@ -183,14 +185,13 @@ returnAttributes = (productName, items, attributeType) => {
                       result.activeIndex === index
                       ? "attributeActive"
                       : ""
-                  ) : ("")
+                  ) : (index? "" : "attributeActive")
               }
-
-              key={index}
+             
+            key={index}
           >{attr.value}</button>
       ));
   }
-
   else if (attributeType === "Capacity") {
       let result = this.state.attributes.find((product) => product.productName === productName && product.attributeType === attributeType);
 
@@ -205,7 +206,7 @@ returnAttributes = (productName, items, attributeType) => {
                       result.activeIndex === index
                       ? "attributeActive"
                       : ""
-                  ) : ("")
+                  ) : (index? "" : "attributeActive")
               }
 
               key={index}
@@ -232,7 +233,7 @@ returnAttributes = (productName, items, attributeType) => {
                       result.activeIndex === index
                       ? "attributeActiveColor"
                       : ""
-                  ) : ("")
+                  ) : (index? "" : "attributeActiveColor")
               }
 
               key={index}
@@ -261,7 +262,7 @@ returnAttributes = (productName, items, attributeType) => {
                                       result.activeIndex === index
                                       ? "attributeActive"
                                       : ""
-                                  ) : ("")
+                                  ) : (index? "" : "attributeActive")
                               }
       
                               key={index}

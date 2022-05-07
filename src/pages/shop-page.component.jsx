@@ -38,11 +38,11 @@ class ShopPage extends Component {
 
                                 <div className="view">
                                     {
-                                        data.category.products.map((product, index) => (
+                                        data.category.products.map((product,index) => (
                                             <ProductCard
                                                 key={index}
                                                 getCurrencySymbol={getCurrencySymbol}
-                                                product={product} 
+                                                product={product}
                                                 currencyIndex={currencyIndex}
                                                 ADD_TO_CART={this.props.ADD_TO_CART}
                                                 REMOVE_FROM_CART={this.props.REMOVE_FROM_CART}

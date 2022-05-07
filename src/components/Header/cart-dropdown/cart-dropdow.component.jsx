@@ -122,7 +122,7 @@ class CartDropDown extends Component {
                         </Link>
                         
                         <Link 
-                            to="/checkout"
+                            to="#"
                             onClick={() =>  {
                                 handleCart(!cartClick)
                                 overlayChange(!this.props.overlay)
